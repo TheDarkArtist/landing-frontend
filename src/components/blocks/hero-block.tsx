@@ -5,7 +5,8 @@ type Props = {
   data: {
     heading: string;
     subtitle: string;
-    cta: string;
+    ctaText: string;
+    ctaLink: string;
     backgroundImage: {
       url: string;
     };
@@ -13,7 +14,7 @@ type Props = {
 };
 
 export const HeroBlock = ({ data }: Props) => {
-  const { heading, subtitle, cta, backgroundImage } = data;
+  const { heading, subtitle, ctaText, ctaLink, backgroundImage } = data;
 
   return (
     <section className={styles.hero}>
@@ -28,7 +29,7 @@ export const HeroBlock = ({ data }: Props) => {
       <div className={styles.overlay}>
         <h1>{heading}</h1>
         <p>{subtitle}</p>
-        <a href="#" className={styles.cta}>{cta}</a>
+        <a href={ctaLink} className={styles.cta}>{ctaText}</a>
       </div>
     </section>
   );

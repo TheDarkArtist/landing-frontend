@@ -55,8 +55,6 @@ export default async function LandingPage({ params }: Props) {
 
   const layout = data.layoutConfig || [];
 
-  console.log(data)
-
   return (
     <main>
       <LayoutRenderer layout={layout} content={data} />

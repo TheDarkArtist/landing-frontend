@@ -13,6 +13,7 @@ export async function fetchLandingPage(slug: string) {
       heroBlock {
         heading
         subtitle
+        ctaText
         ctaLink
         backgroundImage {
           url
@@ -21,6 +22,7 @@ export async function fetchLandingPage(slug: string) {
       twoColumnBlock {
         leftHeading
         leftText
+        ctaText
         ctaLink
         rightImage {
           url

@@ -2,7 +2,8 @@ export type HeroBlock = {
   __typename?: 'HeroBlock';
   heading: string;
   subtitle: string;
-  cta: string;
+  ctaText: string;
+  ctaLink: string;
   backgroundImage: {
     url: string;
     title?: string;
@@ -18,7 +19,7 @@ export type TwoColumnBlock = {
   leftText: string;
   ctaText: string;
   ctaLink: string;
-    rightImage: {
+  rightImage: {
     url: string;
     title?: string;
     width?: number;

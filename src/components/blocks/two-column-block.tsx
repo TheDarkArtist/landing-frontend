@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from './two-column-block.module.css';
+import Link from 'next/link';
 
 type Props = {
   data: {
@@ -14,7 +15,6 @@ type Props = {
 };
 
 export const TwoColumnBlock = ({ data }: Props) => {
-  console.log(data)
   const { leftHeading, leftText, ctaLink, ctaText, rightImage } = data;
 
   return (
@@ -22,7 +22,7 @@ export const TwoColumnBlock = ({ data }: Props) => {
       <div className={styles.text}>
         <h2>{leftHeading}</h2>
         <p>{leftText}</p>
-        <a href={ctaLink} className={styles.cta}>{ctaText}</a>
+        <Link href={ctaLink} className={styles.cta}>{ctaText}</Link>
       </div>
       <div className={styles.image}>
         <Image src={rightImage.url} alt={leftHeading} width={600} height={400} />
