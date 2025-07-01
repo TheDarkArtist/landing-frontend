@@ -14,8 +14,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Landing Page | Contentful App",
+  metadataBase: new URL('https://landing-frontend-sigma-seven.vercel.app/'),
+  title: {
+    template: "%s | Landing Page",
+    default: "Landing Page | Modular CMS-Driven Pages",
+  },
+  description:
+    "Build and render modular, CMS-configured landing pages powered by Contentful. Fully customizable and production-ready.",
+  openGraph: {
+    title: "TDA Landing | Modular CMS-Driven Pages",
+    description:
+      "A flexible system for creating and rendering landing pages from Contentful using a dynamic component layout.",
+    url: "https://tda-landing.vercel.app",
+    siteName: "TDA Landing",
+    images: [{ url: "/og/og-landing-home.png", width: 1200, height: 630 }],
+  },
+  twitter: { card: "summary_large_image" },
 };
+
 
 export default function RootLayout({
   children,
