@@ -1,33 +1,121 @@
 .hero {
   position: relative;
-  height: 60vh;
+  height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  border-bottom: 1px solid #222;
+  background: radial-gradient(ellipse at center, #111 0%, #000 100%);
+  animation: fadeInHero 1.2s ease-out forwards;
+}
+
+@keyframes fadeInHero {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .bg {
-  z-index: 1;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  object-fit: cover;
+  filter: brightness(0.85) blur(1px);
+  transform: scale(1.05);
+  opacity: 0.8;
 }
 
 .overlay {
   position: relative;
   z-index: 2;
   text-align: center;
-  color: white;
-  background: rgba(0, 0, 0, 0.4);
-  padding: 2rem;
+  color: #e0f7fa;
+  background: rgba(0, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 3.5rem 5rem;
   border-radius: 12px;
+  font-size: 1.25rem;
+  box-shadow: 0 8px 40px rgba(0, 255, 255, 0.25);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  animation: floatUp 1s ease-out forwards;
+  max-width: 90%;
+  backdrop-filter: blur(6px);
+}
+
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.overlay h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.overlay p {
+  font-size: 1.2rem;
+  color: #b2ebf2;
+  margin-bottom: 2rem;
 }
 
 .cta {
   margin-top: 1rem;
   display: inline-block;
-  background: #ff4081;
+  background: linear-gradient(135deg, #ff4081, #ff80ab);
   color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
+  padding: 0.85rem 1.75rem;
+  border-radius: 10px;
   text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 20px rgba(255, 64, 129, 0.35);
+  transition: all 0.3s ease-in-out;
+}
+
+.cta:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 28px rgba(255, 64, 129, 0.5);
+  background: linear-gradient(135deg, #ff4081, #ff5e99);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero {
+    height: 80vh;
+    padding: 2rem;
+  }
+
+  .overlay {
+    padding: 2rem 2rem;
+    border-radius: 16px;
+  }
+
+  .overlay h1 {
+    font-size: 2rem;
+  }
+
+  .overlay p {
+    font-size: 1rem;
+  }
+
+  .cta {
+    padding: 0.75rem 1.5rem;
+  }
 }
 
